@@ -1,0 +1,115 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+
+
+body {
+    background-image: url('../images/1.jpg');
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.918);
+    opacity: .9;
+    transition: .5s;
+}
+
+
+
+@keyframes example {
+    0%   {
+        background-image: url('../images/1.jpg');
+
+    }
+    25%  {
+        background-image: url('../images/2.jpg');
+    }
+    50%  {
+        background-image: url('../images/3.jpg');
+
+    }
+    100% {
+        background-image: url('../images/4.jpg');
+
+    }
+  }
+
+/* recode initialize */
+.btn-danger {
+    border-radius: 0;
+    background-color: #EE5684;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-danger::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #E92862;
+    transition: .4s all;
+    z-index: -1;
+}
+
+.btn-danger:hover {
+    transition: .4s all;
+    color: #fff;
+}
+
+.btn-danger:hover::before {
+    left: 0;
+    width: 100%;
+    transition: .4s all;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: 1px solid #DC3545;
+}
+
+section.registration {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+
+}
+
+.signup-form {
+    background-color: white;
+    border-radius: 3px;
+    /* margin-top: 30px; */
+    padding: 20px;
+}
+
+.text-brand {
+    color: #E92862;
+}
